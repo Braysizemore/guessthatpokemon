@@ -1,0 +1,174 @@
+@font-face {
+  font-family: 'PokemonClassic';
+  src: url('fonts/Pokemon Classic.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* Apply it globally */
+body {
+  font-family: 'PokemonClassic', sans-serif;
+  background-image: url(pokemonback.png);
+  margin: 0;                 /* remove default spacing */
+  height: 100vh;             /* make body fill the whole screen */
+  display: flex;             /* activate flexbox */
+  justify-content: center;   /* center left ↔ right */
+  align-items: center;     /* center up ↕ down */
+   
+}
+
+/* Main bubble */
+.app-window{
+
+  background-color: rgb(255, 229, 82);
+  border-radius: 20px;                   /* rounded corners */
+  border: 8px solid #333;                /* dark border like a frame */
+  text-align: center;
+  box-shadow: 10px 5px 15px rgb(0,0,0,.5);
+  
+  height: 600px;
+  width: 350px;
+   
+   transition: box-shadow .5s;
+}
+.app-window:hover{
+    box-shadow: 30px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Title area and design */
+
+.title-window {
+  background-color: rgb(237, 53, 53);  /* red strip */
+  width: 100%;
+  height: 100px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-bottom: 5px solid #000;       /* underline */
+  
+  border-top-left-radius: 10px;        /* match app-window */
+  border-top-right-radius: 10px;
+  line-height: 1;
+  
+}
+
+.title-window p{
+    height: 100px;
+    font-size: 25px;
+    margin: 0;
+    background-color: rgb(237, 53, 53);
+    border-radius: 15px;
+    border: 4px solid rgb(0, 0, 0);
+
+    display: flex;              /* turn on flexbox */
+    justify-content: center;    /* center left/right */
+    align-items: center;  
+}
+
+
+
+
+.sprite-container {
+  display: flex;
+  flex-direction: column; /* stack Pokemon and grass vertically */
+  align-items: center;    /* centers both horizontally */
+}
+
+.garchomp {
+  width: 300px;
+   margin-top:   30px;/* pulls grass closer if needed */
+   filter: drop-shadow(4px 0px 0px rgba(0, 0, 0, 0.6));
+}
+
+.grasspic{
+    
+    width: 90%;
+    margin-top: -130px;
+    margin-bottom: -30px;
+    margin-left: 40px;
+    filter: drop-shadow(4px 6px 0px rgba(0, 0, 0, 0.6));
+    
+    
+}
+.name{
+    
+    background-color: rgb(237, 53, 53);
+    border-radius: 15px;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-color: black;
+    
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-block;
+    border: 4px solid rgb(0, 0, 0);
+    
+    
+    
+    transition: box-shadow .2s;
+     
+}
+
+.name:hover{
+    box-shadow: 3px 3px 10px black;
+}
+
+
+
+.guess-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+  
+}
+
+.guess-input {
+  background-color: rgb(237, 53, 53);
+  color: #000;                 /* or #111 for darker text */
+  border-radius: 15px;
+  padding: 12px 14px;
+  border: 4px solid rgb(0, 0, 0);
+  font-size: 15px;
+  font-weight: bold;
+  width: 220px;               /* tweak to fit your layout */
+  outline: none;
+box-shadow: 3px 3px 10px black;
+}
+
+/* placeholder color so it matches your style */
+.guess-input::placeholder { color: #000; opacity: 0.9; }
+
+/* optional: a simple submit button that matches the UI */
+.guess-submit {
+  background: rgb(237, 53, 53);
+  border: 4px solid #000;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 3px 3px 10px black;
+  transition: transform .5s;
+  
+}
+
+.guess-submit:active {
+  
+  filter: drop-shadow(3px 5px 0px rgba(0,0,0,0.6));
+}
+
+
+.guess-submit:hover{
+    transform: translateY(-5px);
+}
+
+.result {
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+  margin: 20px auto 10px;   /* spacing so it sits nicely */
+  color: #2529c3;           /* default color */
+  max-width: 80%;           /* keep it from touching edges */
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess That Pokemon</title>
+    <link rel="stylesheet" href="pokemon.css">
+</head>
+<body>
+
+
+
+<div class="app-window">
+  <div class="title-window">
+    <p>Guess That Pokemon</p>
+  </div>
+
+  <div class="sprite-container">
+    <img src="garchomp-pokemon-pokemon.gif" class="garchomp">
+    <img src="better.png" class="grasspic">
+    
+  </div>
+
+  <form class="guess-form" autocomplete="off">
+  <input
+    id="guess"
+    class="guess-input"
+    type="text"
+    placeholder="Take Your Guess"
+    aria-label="Type your Pokémon guess"
+  />
+  <button class="guess-submit" type="submit">Guess</button>
+</form>
+
+<p id="result" class="result"></p>
+
+</div>
+
+<script>
+  document.querySelector('.guess-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = document.getElementById('guess').value.trim().toLowerCase();
+    const result = document.getElementById('result');
+
+    // remove all spaces to normalize
+    const normalized = input.replace(/\s+/g, "");
+
+    if (normalized === "garchomp") {
+      result.textContent = "✅ Correct! It's Garchomp!";
+      result.style.color = "green";
+    } else {
+      result.textContent = "❌ Wrong guess, try again!";
+      result.style.color = "red";
+    }
+  });
+</script>
+    
+</body>
+</html>
